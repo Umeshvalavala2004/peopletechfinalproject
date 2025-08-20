@@ -1,0 +1,12 @@
+{
+  "name": "garage-monitoring-system",
+  "version": "1.0.0",
+  "description": "Garage Monitoring System with Diagnostics, Car, GarageMonitor, and CSV integration.",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5"
+  }
+}

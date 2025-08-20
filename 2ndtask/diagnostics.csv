@@ -1,0 +1,7 @@
+car_id,type,value
+0,rpm,6500
+0,load,95
+0,temp,120
+1,rpm,3000
+1,load,40
+1,temp,85
