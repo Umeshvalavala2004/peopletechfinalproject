@@ -1,0 +1,375 @@
+Generate a multi-file JavaScript project based on the scenario and CSV image data. The project must include:
+
+Diagnostic.js → Class Diagnostic(id, type, value) with types: "RPM", "EngineLoad", "CoolantTemp".
+
+Car.js → Store diagnostics, compute performance score.
+
+GarageMonitor.js → Manage multiple cars, detect driver abuse & engine issues.
+
+main.js → Load diagnostics from CSV, display car status.
+
+Features:
+
+Read diagnostics from CSV.
+
+Compute performance score.
+
+Print alerts:
+
+Score < 40 → "Severe Engine Stress"
+
+Missing diagnostic → "Sensor Failure Detected".
+
+Requirement:
+Code should be clean, modular, and runnable. Use the CSV example (from image) for testing.
+
+heck whether the output matches the requirements.
+
+Rewrite your Copilot prompt so that it guides the AI to produce exactly what you want (cleaner, more precise, requirement-focused).
+
+Create a single-page project in HTML, CSS, and JavaScript (inside index.html) with the following requirements:
+
+Diagnostics System:
+
+Define a Diagnostic class (id, type, value).
+
+Supported types: "RPM", "EngineLoad", "CoolantTemp".
+
+Car System:
+
+A Car class that stores diagnostics and computes performance score using the formula:
+
+score = 100 - (rpm / 100 + engineLoad * 0.5 + (coolantTemp - 90) * 2);
+
+
+Garage Monitor:
+
+Manage multiple cars.
+
+Detect driver abuse and engine issues.
+
+CSV Loader:
+
+Read diagnostics from a CSV file (example from image: Car1,RPM,6500, Car1,CoolantTemp,120, Car2,EngineLoad,95).
+
+Populate car data on the UI after loading.
+
+UI Features:
+
+Clean, modern, responsive design (use CSS for cards, colors, shadows).
+
+Table or card view to display each car, its diagnostics, score, and alerts.
+
+Alerts:
+
+If score < 40 → show "Severe Engine Stress" (highlight in red).
+
+If a diagnostic is missing → show "Sensor Failure Detected" (highlight in orange).
+
+Extra:
+
+Add a simple file upload button for CSV input.
+
+Add styled status messages below each car card.
+
+Requirement:
+All code must be inside one index.html file (HTML, CSS, JS). The UI should look professional, minimal, and user-friendly.
+
+
+
+
+2.=========================
+You are a senior software engineer. Refactor the following messy JavaScript code into a clean, modular, object-oriented design that meets the detailed requirements below.
+
+Input Code (currently all in main.js):
+let rpm = [6500, 3000];
+let load = [95, 40];
+let temp = [120, 85];
+
+for (let i = 0; i < 2; i++) {
+  let score = 100 - (rpm[i] / 100 + load[i] * 0.5 + (temp[i] - 90) * 2);
+  console.log(`Car ${i} score=${score}`);
+  if (score < 40) console.log("ALERT");
+}
+
+Refactor Requirements
+
+Object-Oriented Design
+
+Create a Diagnostic class (id, type, value).
+
+Create a Car class that:
+
+Stores diagnostics.
+
+Computes a performance score.
+
+Create a GarageMonitor class that:
+
+Manages multiple cars.
+
+Detects driver abuse and engine stress.
+
+Prints alerts.
+
+Modularization
+
+Split into separate files:
+
+Diagnostic.js
+
+Car.js
+
+GarageMonitor.js
+
+main.js
+
+Use ES6 modules (export / import).
+
+CSV Input
+
+Load diagnostic data from a CSV file using Node.js (fs or csv-parse).
+
+Each row should map to a Diagnostic object.
+
+Assign diagnostics to the appropriate car.
+
+Error Handling & Validation
+
+Handle missing or malformed diagnostics gracefully.
+
+If any diagnostic is missing → log "Sensor Failure Detected".
+
+If performance score < 40 → log "Severe Engine Stress".
+
+Maintainability
+
+Replace magic numbers (100, 0.5, 90, 2) with named constants.
+
+Keep code modular, readable, and testable.
+
+Deliverables
+
+Full code implementation across the four files.
+
+Example CSV format for input data.
+
+Demonstration in main.js that loads the CSV, instantiates objects, computes scores, and prints alerts.
+
+3.========================
+You are a senior QA engineer. Write comprehensive automated tests for the Garage Monitoring System using JavaScript. Use Jest (preferred) or Mocha + Chai if Jest is not available.
+
+System Under Test
+
+The system consists of:
+
+Diagnostic.js → represents a single diagnostic reading (id, type, value).
+
+Car.js → stores diagnostics, computes performance score.
+
+GarageMonitor.js → manages multiple cars, checks alerts.
+
+main.js → loads diagnostics from CSV and prints results.
+
+Test Requirements
+
+Write unit and integration tests to cover these scenarios:
+
+Severe Engine Stress
+
+A car with rpm=6500, load=95, temp=120 → performance score < 40.
+
+Expect output: "Severe Engine Stress".
+
+Sensor Failure
+
+A car missing CoolantTemp diagnostic.
+
+Expect output: "Sensor Failure Detected".
+
+Garage Average
+
+A garage with two cars: one with score=70, one with score=30.
+
+Expected average score = 50.
+
+Boundary Condition
+
+A car with exactly score=40.
+
+No alert should be triggered.
+
+Empty CSV
+
+If CSV file is empty or invalid, system must throw an Error.
+
+Deliverables
+
+Full test suite (__tests__/ folder or similar).
+
+Clear separation of unit tests (Diagnostic, Car) and integration tests (GarageMonitor, CSV loading).
+
+Use assertions (expect in Jest or chai.expect in Mocha).
+
+Ensure tests are runnable with npm test.
+
+Your task is to update the application logic (aa ll) to ensure all test cases pass and to display their results on the webpage. Follow the steps below:
+
+Step 1: Analyze the current codebase to identify any failing test cases and fix them to ensure all pass successfully.
+Step 2: Implement or update automated test scripts to verify the application functionality, ensuring they cover all necessary scenarios.
+Step 3: Modify the webpage interface to include a button labeled "Show Test Results."
+Step 4: Ensure this button triggers a mechanism that retrieves the status of all test cases and displays detailed results, indicating pass or fail, directly on the webpage.
+Step 5: Ensure the presentation of test results is clear and user-friendly, allowing users to easily discern the status of each test case.
+
+Begin by preparing the application logic to accommodate these changes. Include error handling to ensure smooth operation and provide user feedback on success or failure.
+
+Focus on a design that allows easy integration and maintenance of test scripts and results.
+
+End with a confirmation that all test cases are visible and function as expected when the button is activated on the webpage.
+
+You are a senior React + Tailwind + Chart.js engineer.
+Please review my existing project and update it to meet these requirements:
+
+Requirements
+
+Homepage Button
+
+Add a clearly visible “View Graphs” button on the homepage (place it near the top-right in the navbar or centered in the hero section).
+
+Style the button with TailwindCSS so it looks like a primary action (rounded, shadow, hover effect).
+
+On click → navigate to /graphs.
+
+Routing
+
+Use React Router to define a new route /graphs.
+
+Ensure navigation works properly without breaking other pages.
+
+Graphical Page (GraphicalPage.jsx)
+
+Create this component and render three charts using react-chartjs-2:
+
+Bar chart → Car performance scores
+
+Line chart → Engine temp or RPM trend
+
+Doughnut chart → Pass vs Fail percentage
+
+Use demo/mock data if real CSV parsing isn’t available yet.
+
+UI/UX Fixes
+
+Place charts inside responsive cards with Tailwind (rounded-xl, shadow, padding).
+
+Add a “Back to Home” button at the top of the Graphical Page.
+
+Make sure charts resize properly on different screen sizes.
+
+Validation
+
+Double-check that:
+
+The button is visible on homepage.
+
+Clicking it actually loads the Graphical Page.
+
+All three charts render without errors.
+
+Styling matches the Tailwind design (clean and modern).
+
+
+4.==============================
+You are a senior technical writer. Generate a professional README.md for my Garage Monitoring System project built with JavaScript, React, Tailwind, and Node.js.
+
+Requirements
+
+Introduction
+
+Describe the project purpose: a Garage Monitoring System that loads diagnostics from CSV, computes car performance scores, and detects engine issues.
+
+Mention the tech stack (React + Vite + Tailwind + Node.js).
+
+Explanation of Classes/Functions
+Provide a clear explanation of each main class and its purpose:
+
+Diagnostic.js: Represents a diagnostic entry (id, type, value).
+
+Car.js: Stores diagnostics and computes performance score.
+
+GarageMonitor.js: Manages multiple cars, computes average score, detects issues.
+
+main.js: Loads diagnostics from CSV, initializes system, and prints results.
+
+TestRunner.jsx: Runs predefined test cases from the UI, displays results (✅ PASS / ❌ FAIL).
+
+Sample Input/Output
+
+Show an example CSV input with at least 2 cars.
+
+Show the corresponding console output (car score, alerts).
+
+Show an example of how test results appear in the webpage UI after clicking Run Tests.
+
+Formatting
+
+Use Markdown best practices (headings, bullet points, fenced code blocks).
+
+Include example commands for running the project (npm install, npm run dev, npm test).
+
+Deliverable
+
+A complete README.md file that is clear, concise, and trainer-friendly, making it easy to understand the project and test it.
+
+5.================
+You are a senior Node.js engineer.
+Please refactor my project to demonstrate concurrency simulation in JavaScript for car diagnostics.
+Implement the following features step by step with clean, modular code and proper comments:
+
+Requirements
+
+Single-thread Simulation
+
+Use setInterval or setTimeout to update diagnostics (RPM, EngineLoad, CoolantTemp) for multiple cars in real time.
+
+Each car’s diagnostics should update every few seconds and print updates to the console.
+
+Multi-thread Simulation
+
+Use the worker_threads module in Node.js.
+
+Create workers where each worker simulates diagnostics for one car.
+
+Workers should send updates back to the main thread.
+
+Main thread should print each car’s updated diagnostics with timestamps.
+
+Performance Comparison
+
+Measure and log the execution time for both single-thread and worker-thread approaches.
+
+Print a summary at the end comparing performance (e.g., average update time, total elapsed time).
+
+Code Quality
+
+Use ES Modules (import/export).
+
+Create separate files:
+
+Car.js → Car class with diagnostics update logic
+
+worker.js → Worker thread code for updating diagnostics
+
+main.js → Entry point that runs both single-thread and multi-thread simulations
+
+Include error handling for worker crashes or invalid data.
+
+Add comments explaining concurrency concepts for clarity.
+
+Validation
+
+Ensure single-thread simulation shows sequential updates.
+
+Ensure worker-thread simulation shows parallel updates from multiple workers.
+
+Ensure both approaches log diagnostic updates for at least 3 cars.
