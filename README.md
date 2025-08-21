@@ -4,6 +4,7 @@
 
 <a href="https://peopletechfinalproject.netlify.app/" target="_blank">
   <img src="[https://drive.google.com/file/d/1GGAe1KzAm_ncI-ERrTqE9PrhSppATBHx/view?usp=sharing]" alt="PeopleTech Final Project – Screenshot" width="85%" style="border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.15);" />
+<iframe src="https://drive.google.com/file/d/1GGAe1KzAm_ncI-ERrTqE9PrhSppATBHx/preview" width="640" height="480" allow="autoplay"></iframe>
 </a>
 
 <br/>
