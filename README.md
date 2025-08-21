@@ -28,7 +28,7 @@ A polished, production-ready front‑end demonstrating clean UI/UX, responsive l
 ## 🧭 Quick Links
 
 * **Live Demo:** [https://peopletechfinalproject.netlify.app/](https://peopletechfinalproject.netlify.app/)
-* **Preview Image:** [https://peopletechfinalproject.netlify.app/screenshot.png](https://peopletechfinalproject.netlify.app/screenshot.png)
+* **Preview Image:** [[https://peopletechfinalproject.netlify.app/screenshot.png](https://drive.google.com/file/d/1GGAe1KzAm_ncI-ERrTqE9PrhSppATBHx/view?usp=sharing)](https://peopletechfinalproject.netlify.app/screenshot.png)
 * **Issues / Feedback:** Open a GitHub Issue on this repo
 
 ---
